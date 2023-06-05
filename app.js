@@ -27,4 +27,9 @@ for(let i = 0; i < 20; i++) {
   people.push(newPerson);
 };
 
-console.log(people);
+const typedArr = JSON.stringify(people);
+
+fs.writeFile('people.json', typedArr, (err) => {
+  if (err) throw err;
+  console.log('The file has been saved!');
+});
